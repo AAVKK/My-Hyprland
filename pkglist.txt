@@ -19,6 +19,7 @@ fastfetch
 feh
 ffmpegthumbnailer
 fish
+foo2zjs-nightly
 ghostscript
 ghostty
 git
@@ -100,4 +101,5 @@ xf86-video-nouveau
 xorg-server
 xorg-xinit
 yay
+yay-debug
 zram-generator
