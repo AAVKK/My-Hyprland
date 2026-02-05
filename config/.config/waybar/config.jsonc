@@ -1,0 +1,118 @@
+{
+  "height": 55,
+  "spacing": 5,
+
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
+  "modules-center": ["custom/cavak", "clock",],
+  "modules-right": [
+    "network",
+    "pulseaudio",
+    "backlight",
+    "battery",
+    "tray",
+    "custom/notification",
+  ],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {},
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "*": 4,
+    },
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 15
+},
+
+  "custom/arch": {
+    "format": "",
+    "on-click": "walker",
+    "tooltip": false,
+  },
+
+  "custom/cava": {
+    "format": "{}",
+    "exec": "~/.config/waybar/cava.sh",
+    "tooltip": false,
+  },
+
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "format-alt": "{:%Y-%m-%d}",
+    "tooltip-format": "<big>{:%Y %B %d}</big>\n<tt><small>{calendar}</small></tt>",
+  },
+
+  "network": {
+    "format-wifi": " {signalStrength}% ⇣{bandwidthDownBytes:>3} ⇡{bandwidthUpBytes:>3}",
+    "format-ethernet": " ⇣{bandwidthDownBytes:>3} ⇡{bandwidthUpBytes:>3}",
+    "tooltip-format": "{ifname} via {gwaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "interval": 1
+},
+
+
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{volume}% {icon}  {format_source}",
+    "format-bluetooth-muted": "  {format_source}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pamixer -t",
+    "on-click-right": "pavucontrol",
+    "tooltip": false,
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon}  {percent}%",
+    "format-icons": ["", "", "🔆"],
+    "on-click": "pgrep -x hyprsunset && pkill hyprsunset || hyprsunset -t 5000",
+    "on-click-right": "hyprsunset -t 6500",
+    "tooltip": false,
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "charging": ["󰂄"],
+      "discharging": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+      "full": ["󰂅"],
+    },
+    "interval": 5,
+    "tooltip": false,
+  },
+  "custom/notification": {
+    "tooltip": false,
+    "format": "<span size='16pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+}
