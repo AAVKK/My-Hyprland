@@ -10,7 +10,7 @@
 * **Шелл:** Fish
 
 ### Как установить на новый ПК:
-1. `git clone https://github.com ~/dotfiles`
+1. `git clone https://github.com/AAVKK/My-Hyprland ~/dotfiles`
 2. `chmod +x ~/dotfiles/install.sh`
 3. `./~/dotfiles/install.sh`
 <img width="1920" height="1200" alt="Рабочий стол" src="https://github.com/user-attachments/assets/473d2f67-99a5-49b7-aa0a-de4e73e8048f" />
