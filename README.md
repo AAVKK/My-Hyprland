@@ -3,7 +3,7 @@
 Моя личная сборка Arch Linux + Hyprland.
 
 ### Основные компоненты:
-* **WM:** Hyprland
+* **Окружение:** Hyprland
 * **Панель:** Waybar
 * **Терминал:** Kitty / Ghostty
 * **Обои:** Waypaper
